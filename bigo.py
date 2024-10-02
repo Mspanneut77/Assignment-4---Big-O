@@ -27,20 +27,19 @@ def length_of_longest_substring_n3(s):
     """
     max_length = 0
     for i in range(len(s)):
-          letters = []
-          num = 0
-          for j in range(i, len(s)):
-                if s[j] not in letters:
-                      num += 1
-                      letters.append(s[j])
-                else:
-                      break
+        letters = []
+        num = 0
+        for j in range(i, len(s)):
+              if s[j] not in letters:
+                    num += 1
+                    letters.append(s[j])
+              else:
+                    break
 
-          if num > max_length:
-                max_length = num
+        max_length = max(max_length, num)
 
     return max_length
-              
+        
 def length_of_longest_substring_n2(s):
     """
     Finds the length of the longest substring without repeating characters
@@ -60,8 +59,8 @@ def length_of_longest_substring_n2(s):
         max_num = num
 
         while max_num < len(s) and s[max_num] not in letters:
-              letters.add(s[max_num])
-              max_num += 1
+            letters.add(s[max_num])
+            max_num += 1
 
         current = max_num - num
         max_length = max(max_length, current)
@@ -90,13 +89,13 @@ def length_of_longest_substring_n(s):
         current = s[i]
 
         if current in dictionary and dictionary[current] >= start:
-              start = dictionary[current] + 1
-          
+            start = dictionary[current] + 1
+
         dictionary[current] = i
 
         other_length = i - start + 1
 
-        max_length = max(max_length, other_length) 
+        max_length = max(max_length, other_length)
 
     return max_length
     
