@@ -31,15 +31,15 @@ def length_of_longest_substring_n3(s):
         num = 0
         for j in range(i, len(s)):
             if s[j] not in letters:
-                  num += 1
-                  letters.append(s[j])
+                num += 1
+                letters.append(s[j])
             else:
-                  break
+                break
 
         max_length = max(max_length, num)
 
     return max_length
-     
+
 def length_of_longest_substring_n2(s):
     """
     Finds the length of the longest substring without repeating characters
